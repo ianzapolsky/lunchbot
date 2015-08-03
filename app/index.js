@@ -103,6 +103,9 @@ slack.on('message', function(message) {
         return;
     }
 
+    // remove backslashes from input
+    message.text = message.text.replace('\\', '').trim();
+
     if (message.type === 'message' && (cType === 'DM' || isDirect(slack.self.id, message.text))) {
 
         // set the message text to all lower case for case-insensitive matching

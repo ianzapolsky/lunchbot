@@ -116,7 +116,7 @@ def query_api(term, location, listall, describe):
             bus = businesses[0]
             ret_bus = {'name': bus['name'], 'url': bus['url']}
             print json.dumps(ret_bus)
-        except IndexError:
+        except:
             print json.dumps({})
         return
 
