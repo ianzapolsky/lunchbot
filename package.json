@@ -1,0 +1,10 @@
+{
+  "name": "lunchbot",
+  "version": "1.0.0",
+  "description": "AppNexus HackU Project",
+  "main": "app/index.js",
+  "license": "ISC",
+  "devDependencies": {
+    "slack-client": "^1.4.1"
+  }
+}
