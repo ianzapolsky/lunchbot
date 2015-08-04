@@ -342,17 +342,8 @@ function handle_user_state(user, message) {
                     });
                 } else {
                     userState[user.name]['where'] = message.text;
-                    exec('python app/randomize.py --describe "' + message.text + '"', function(err, stdout, stderr) {
-                        var dinfo = JSON.parse(stdout);
-                        if (dinfo['url']) {
-                            userState[user.name]['url'] = dinfo['url'];
-                            userDM.send('great, you\'re going to '+ message.text +' ['+dinfo['url']+'].\nwhen do you want to leave?');
-                        } else {
-                            userState[user.name]['url'] = null;
-                            userDM.send('great, you\'re going to '+ message.text +'.\nwhen do you want to leave?');
-                        }
-                        userState[user.name]['state'] += 1;
-                    });
+                    userDM.send('great, you\'re going to '+ message.text +'.\nwhen do you want to leave?');
+                    userState[user.name]['state'] += 1;
                 }
                 break;
             case 2:
